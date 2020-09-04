@@ -16,13 +16,8 @@ seal is rtmp server written by go language, main refer to rtmp server open sourc
 
   ```nohup ./seal -c seal.yaml &```
 * mock stream publish
-  
-  <pre><code>for((;;)); do \
-        ffmpeg -re -i lindan.flv \
-        -vcodec copy -acodec copy \
-        -f flv -y rtmp://127.0.0.1/live/test; \
-	    sleep 3       
-  done</code></pre> 
+
+  ```ffmpeg -f video4linux2 -s 1280x720 -i /dev/video4 -f flv -b:v 1024k -metadata streamName="Webcam" rtmp://127.0.0.1/live/test;```
 
 * use vlc play
 
