@@ -6,7 +6,7 @@ import (
 	"os"
 
 	"github.com/calabashdad/utiltools"
-	"github.com/yaml"
+	"github.com/go-yaml/yaml"
 )
 
 // GlobalConfInfo global config info
